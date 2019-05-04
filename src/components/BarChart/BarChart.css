@@ -13,6 +13,51 @@
 }
 
 
+.MainContainer {
+    box-sizing: border-box;
+    font-size: 1.8rem;
+    color: var(--text);
+    padding-left: var(--main-margins);
+    padding-right: var(--main-margins);
+    min-height: var(--content-height);
+}
+
+.MainContainer img {
+  max-width: 100%;
+}
+
+.MainContainer {
+    grid-template-rows: 150px auto;
+    display: grid;
+    min-height: var(--content-height);
+}
+
+
+.CurrencyCheckboxList {
+    display: grid;
+    grid-template-columns: repeat(17, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    align-items: middle;
+}
+
+.CurrencyCheckboxList input[type=checkbox] {
+    display: none;
+}
+
+.CurrencyCheckboxList span {
+    display: block;
+    text-align: center;
+}
+
+.CurrencyCheckboxList input:checked + span {
+    background-color: var(--highlight);
+    color: var(--text);
+    border: 2px solid var(--highlight-dark);
+    box-sizing: border-box;
+}
+
+
 .BarChart {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
