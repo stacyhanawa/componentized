@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import CurrencyChooser from './components/CurrencyChooser/CurrencyChooser.js';
+import BarChart from './components/BarChart/BarChart.js';
+import Bar from './components/Bar/Bar.js';
+
 class App extends Component {
   state = {
     apiData: '',
@@ -18,9 +22,9 @@ class App extends Component {
   }
   
 
-  handleChange = (event) => {
-    console.log(event.target.value);
-    this.state.selectedCurrency = event.target.value;
+  handleChange = (ev) => {
+    console.log(ev.target.value);
+    this.state.selectedCurrency = ev.target.value;
     this.doFetch();
   }
   
@@ -74,39 +78,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-                
-        <section className="TitleBar">
-            <h1>Currency</h1>
-            
-            <div className="CurrencyChooser">
-                <label>Base currency:
-                    <select className="CurrencyChooser-select"  onChange={this.handleChange}>
-                         {
-                            this.state.currencies.map(currency => (
-                                <option value={currency}>{currency}</option>
-                            ))
-                         }
-                    </select>
-                </label>
-            </div>
-        </section>
-        <section className="MainContainer">
-            <div className="CurrencyCheckboxList">
-            </div>
-            <div className="BarChart">
-                {
-                this.state.rates.map(rate => (
-                  <div 
-                    className="BarChart-bar" 
-                    style={{ height: rate.height + "%"}}>
-                    {rate.currency} {rate.rate.toFixed(2)}
-                  </div>
-                ))
-              }
-
-            </div>
-        </section>
-        
+        <CurrencyChooser />
+        <BarChart />
+        <Bar />
       </div>      
     );
   }

@@ -1,0 +1,50 @@
+:root {
+    --main-margins: 10vw;
+    --top-bar-height: 100px;
+    --content-height: calc(100vh - var(--top-bar-height));
+}
+
+:root {
+    --text: #2a2a2a;
+    --bg: #E1F5C4;
+    --highlight: #FC913A;
+    --highlight-dark: #EDE574;
+    --alt-bg: #F9D423;
+}
+
+
+.BarChart-bar {
+    color: --var(--text);
+    height: 100px;
+    font-size: 4vw;
+    transition: transform 0.5s, filter 0.5s;
+    transform: perspective(1000px) translate3d(0px, 1px, 0px);
+    text-align: center;
+}
+
+.BarChart-bar--small {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+.BarChart-bar:nth-child(even) {
+    background-color: var(--highlight);
+}
+
+.BarChart-bar:nth-child(odd) {
+    background-color: var(--highlight-dark);
+}
+
+.BarChart-bar:hover {
+    filter: brightness(1.5);
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    cursor: pointer;
+    transform: perspective(1000px) translate3d(0px, 0px, 100px);
+}

@@ -1,0 +1,22 @@
+:root {
+    --main-margins: 10vw;
+    --top-bar-height: 100px;
+    --content-height: calc(100vh - var(--top-bar-height));
+}
+
+:root {
+    --text: #2a2a2a;
+    --bg: #E1F5C4;
+    --highlight: #FC913A;
+    --highlight-dark: #EDE574;
+    --alt-bg: #F9D423;
+}
+
+
+.BarChart {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    align-items: end;
+    position: relative;
+}
