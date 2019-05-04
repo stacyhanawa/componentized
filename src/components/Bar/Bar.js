@@ -6,7 +6,7 @@ class Bar extends Component {
         return (
             <div className="BarChart-bar" 
                     style={{ height: this.props.height + "%"}}>
-                    {this.props.currency} {this.props.rate.toFixed(2)}
+                    {this.props.currency} {this.props.rate}
             </div>
         );
     }
