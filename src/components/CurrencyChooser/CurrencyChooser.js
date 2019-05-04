@@ -9,9 +9,9 @@ class CurrencyChooser extends Component {
             
                 <div className="CurrencyChooser">
                     <label>Base currency:
-                        <select className="CurrencyChooser-select"  onChange={this.handleChange}>
+                        <select className="CurrencyChooser-select"  onChange={this.props.handleChange}>
                              {
-                                this.state.currencies.map(currency => (
+                                this.props.currencies.map(currency => (
                                     <option value={currency}>{currency}</option>
                                 ))
                              }

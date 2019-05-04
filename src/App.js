@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-// import CurrencyChooser from './components/CurrencyChooser/CurrencyChooser.js';
+import CurrencyChooser from './components/CurrencyChooser/CurrencyChooser.js';
 import BarChart from './components/BarChart/BarChart.js';
 import Bar from './components/Bar/Bar.js';
 
@@ -16,7 +16,6 @@ class App extends Component {
         "BRL",
     ],
     rates: [
-    
     ],
     selectedCurrency: "EUR",
     highest: 0,
@@ -79,7 +78,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
+        <CurrencyChooser 
+            currencies={this.state.currencies}
+            handleChange={this.handleChange}
+        />
         <BarChart 
             rates={this.state.rates}
         />
